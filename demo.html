@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阴阳师轮播图—jQuery插件</title>
+	<link rel="stylesheet" href="css/jquery-yys-slider.css">
+</head>
+<body>
+	<div class="content-part part-tese">
+    <div class="content-title"></div>
+    <div class="shadow"></div>
+    <div class="gallery_container">
+      <div class="gallery_wrap threeD_gallery_wrap" style="margin-left: -360px; margin-top: -260px;">
+      	<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_left_middle">
+          <img src="images/yys_banner1.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item front_side">
+          <img src="images/yys_banner2.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_right_middle">
+          <img src="images/yys_banner3.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
+          <img src="images/yys_banner4.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+      </div>
+      <a class="prev" href="javascript:;"></a>
+      <a class="next" href="javascript:;"></a>
+    </div>
+  </div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery-yys-slider.js"></script>
+<script>
+$(function(){
+	$('.content-part.part-tese').addClass('show');
+	$('.gallery_container').gallery_slider({imgNum: 4});
+})
+</script>
+</body>
+</html>
