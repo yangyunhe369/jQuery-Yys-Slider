@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阴阳师轮播图—jQuery插件</title>
+	<link rel="stylesheet" href="css/jquery-yys-slider.css">
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?760cb73b0a55b008cbf69206cd7503cd";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <style>
+    .code{
+      width: 960px;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: normal;
+      position: absolute;
+      left: 50%;
+      top: 90px;
+      margin-left: -480px;
+      color: #fff;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+	<h1>
+    仿阴阳师官网轮播插件（新版）为无限轮播插件，轮播方式为横向滚动（仅支持此方式）<br>
+    作者：弦云孤赫(David Yang)&nbsp;&nbsp;&nbsp;&nbsp;联系方式—QQ：314786482&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    温馨提示：作者开源不易，希望使用本插件时，能署名作者，感谢支持。<br>
+    ps：由于本插件使用了大量CSS3属性，对于低版本浏览器（如ie9以下版本等不支持CSS3属性的浏览器）不兼容。<br>
+  </h1>
+	<div class="content-part part-tese">
+    <div class="content-title"></div>
+    <div class="shadow"></div>
+    <div class="gallery_container">
+      <div class="gallery_wrap threeD_gallery_wrap" style="margin-left: -360px; margin-top: -260px;">
+      	<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_left_middle">
+          <img src="images/yys_banner1.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item front_side">
+          <img src="images/yys_banner2.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_right_middle">
+          <img src="images/yys_banner3.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
+          <img src="images/yys_banner4.jpg" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+      </div>
+      <a class="prev" href="javascript:;"></a>
+      <a class="next" href="javascript:;"></a>
+    </div>
+  </div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery-yys-slider.js"></script>
+<script>
+$(function(){
+	$('.content-part.part-tese').addClass('show');
+	$('.gallery_container').gallery_slider({imgNum: 4});
+})
+</script>
+</body>
+</html>
