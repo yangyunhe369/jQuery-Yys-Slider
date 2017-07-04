@@ -70,6 +70,11 @@ $(".gallery_container").gallery_slider({
 	imgNum: 4 //轮播图数量至少为4张
 });
 ```
+## 说明
+
+如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
+
+或者您可以 "follow" 一下，我会不断开源更多的有趣的项目
 
 ## 个人简介
 作者：弦云孤赫(David Yang)
