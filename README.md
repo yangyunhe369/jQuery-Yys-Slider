@@ -6,6 +6,7 @@
 ps:由于本插件使用了大量CSS3属性，对于低版本浏览器（如ie9以下版本等不支持CSS3属性的浏览器）不兼容。
 
 **demo**：[线上地址](https://yangyunhe369.github.io/jQuery-Yys-Slider/)
+**代码详解**：[博客链接](http://www.yangyunhe.me/2017/jquery-yysSlider/)
 
 ## 下载源码
 
@@ -20,58 +21,22 @@ git clone https://github.com/yangyunhe369/jQuery-Yys-Slider.git
 ``` javascript
 调用轮播插件：
 Html：
-<div class="content-part part-tese">
-  <div class="content-title"></div>
-  <div class="shadow"></div>
-  <div class="gallery_container">
-    <div class="gallery_wrap threeD_gallery_wrap">
-    	<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_left_middle">
-        <img src="..." class="show">
-        <div class="line-t"></div>
-        <div class="line-r"></div>
-        <div class="line-b"></div>
-        <div class="line-l"></div>
-      </div>
-      <div href="javascript:;" class="gallery_item threeD_gallery_item front_side">
-        <img src="..." class="show">
-        <div class="line-t"></div>
-        <div class="line-r"></div>
-        <div class="line-b"></div>
-        <div class="line-l"></div>
-      </div>
-      <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_right_middle">
-        <img src="..." class="show">
-        <div class="line-t"></div>
-        <div class="line-r"></div>
-        <div class="line-b"></div>
-        <div class="line-l"></div>
-      </div>
-      <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
-        <img src="..." class="show">
-        <div class="line-t"></div>
-        <div class="line-r"></div>
-        <div class="line-b"></div>
-        <div class="line-l"></div>
-      </div>
-      ...
-      (<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
-        <img src="..." class="show">
-        <div class="line-t"></div>
-        <div class="line-r"></div>
-        <div class="line-b"></div>
-        <div class="line-l"></div>
-      </div>) * n
-      <a class="prev" href="javascript:;"></a>
-      <a class="next" href="javascript:;"></a>
-    </div>
-  </div>
-</div>
-//当图片数量大于4张时，需再添加类名为".gallery_out"的容器
+<div class="gallery_container"></div>
 Javascript：
 $(".gallery_container").gallery_slider({
-	imgNum: 4 //轮播图数量至少为4张
+	imgNum: 4, //轮播图数量至少为4张
+  imgArr: [
+    'images/xxx.jpg',
+    'images/xxx.jpg',
+    'images/xxx.jpg',
+    'images/xxx.jpg'
+  ]
 });
 ```
+## 项目更新
+
+2017.08.01 — 优化代码，取消自定义class，自动填充html结构。
+
 ## 说明
 
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^

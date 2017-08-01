@@ -6,20 +6,76 @@
 (function($) {
 	$.fn.gallery_slider = function(options) {
 	  var _ops = $.extend({
-	      imgNum: 5 , //图片数量
-	      gallery_item_left: '.prev' , //左侧按钮
-	      gallery_item_right: '.next' , //右侧按钮
-	      gallery_left_middle: '.gallery_left_middle', //左侧图片容器
-	      gallery_right_middle: '.gallery_right_middle', //左侧图片容器
-	      threeD_gallery_item: '.threeD_gallery_item' //图片容器
+	      imgNum: 5 , 																				//图片数量
+	      imgArr: [], 																				//图片地址数组
+	      slider_html: '',   																	//轮播容器html结构
+	      show_line: true,																		//是否显示图片边缘线框，默认为显示
 	  }, options);
 	  var _this = $(this),
-	  		_imgNum = _ops.imgNum, //图片数量
-	  		_gallery_item_left = _ops.gallery_item_left, //左侧按钮
-	  		_gallery_item_right = _ops.gallery_item_right, //右侧按钮
-	  		_gallery_left_middle = _ops.gallery_left_middle, //左侧图片容器
-	  		_gallery_right_middle = _ops.gallery_right_middle, //左侧图片容器
-	  		_threeD_gallery_item = _ops.threeD_gallery_item; //图片容器
+	  		_imgNum = _ops.imgNum, 															//图片数量
+	  		_imgArr = _ops.imgArr, 															//图片地址数组
+	  		_slider_html = _ops.slider_html,										//轮播容器html结构
+	  		_show_line = _ops.show_line,												//是否显示图片边缘线框，默认为显示
+	  		_gallery_item_left = '.prev', 											//左侧按钮class
+	  		_gallery_item_right = '.next', 											//右侧按钮class
+	  		_front_side = '.front_side', 												//中间图片容器class
+	  		_gallery_left_middle = '.gallery_left_middle', 			//左侧图片容器class
+	  		_gallery_right_middle = '.gallery_right_middle', 		//右侧图片容器class
+	  		_gallery_out = '.gallery_out', 											//隐藏图片容器class
+	  		_threeD_gallery_item = '.threeD_gallery_item', 			//图片容器class
+				gallery_out_html=``,																//隐藏图片容器html结构
+	  		gallery_out_htmlNum = _imgNum - 3;  								//隐藏图片容器数量											
+	  //拼接隐藏容器html结构
+	  if(gallery_out_htmlNum > 0){
+		  for(var i = 0;i < gallery_out_htmlNum;i++){
+		  	if(_show_line){
+			  	gallery_out_html += `<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
+	          <img src="${_imgArr[3+i]}" class="show">
+	          <div class="line-t"></div>
+	          <div class="line-r"></div>
+	          <div class="line-b"></div>
+	          <div class="line-l"></div>
+	        </div>`
+		  	}else{
+		  		gallery_out_html += `<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_out">
+	          <img src="${_imgArr[3+i]}" class="show">
+	          <div class="line-t"></div>
+	          <div class="line-r"></div>
+	          <div class="line-b"></div>
+	          <div class="line-l"></div>
+	        </div>`
+		  	}
+		  }
+	  }
+	  //拼接轮播容器html结构
+	  _slider_html = `<div class="gallery_wrap threeD_gallery_wrap">
+      	<div href="javascript:;" class="gallery_item threeD_gallery_item gallery_left_middle">
+          <img src="${_imgArr[0]}" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item front_side">
+          <img src="${_imgArr[1]}" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>
+        <div href="javascript:;" class="gallery_item threeD_gallery_item gallery_right_middle">
+          <img src="${_imgArr[2]}" class="show">
+          <div class="line-t"></div>
+          <div class="line-r"></div>
+          <div class="line-b"></div>
+          <div class="line-l"></div>
+        </div>`+gallery_out_html+
+        `</div>
+      <a class="prev" href="javascript:;"></a>
+      <a class="next" href="javascript:;"></a>
+    </div>`;
+    //添加轮播容器html结构到DOM中
+    _this.append(_slider_html);
 	  		
   	//左侧按钮绑定点击事件
   	_this.find(_gallery_item_left).on('click',function(){
