@@ -24,7 +24,7 @@ Html：
 <div class="gallery_container"></div>
 Javascript：
 $(".gallery_container").gallery_slider({
-	imgNum: 4, //轮播图数量至少为4张
+  imgNum: 4, //轮播图数量至少为4张
   imgArr: [
     'images/xxx.jpg',
     'images/xxx.jpg',
