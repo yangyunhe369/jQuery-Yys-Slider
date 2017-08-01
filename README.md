@@ -14,7 +14,7 @@ ps:由于本插件使用了大量CSS3属性，对于低版本浏览器（如ie9�
 git clone https://github.com/yangyunhe369/jQuery-Yys-Slider.git
 ```
 ## 项目截图
-![yys](http://www.yangyunhe.me/2017/jquery-yysSlider/test.png)
+![cover](images/cover.png)
 
 ## 使用方法
 
