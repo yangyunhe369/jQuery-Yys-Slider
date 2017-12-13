@@ -36,6 +36,7 @@ $(".gallery_container").gallery_slider({
 ## 项目更新
 
 2017.08.01 — 优化代码，取消自定义class，自动填充html结构。
+2017.12.13 — 更新样式代码，保留旧版样式代码，`demo_old.html`为旧版代码模板页面。
 
 ## 说明
 
